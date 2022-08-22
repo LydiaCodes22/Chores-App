@@ -15,8 +15,8 @@ import AddChoreForm from "./AddChoreForm";
 import ChildDashboard from "./ChildDashboard";
 import FindAvailableChores from "./FindAvailableChores";
 import ChoresToApprove from "./ChoresToApprove";
-import ListOfChildren from "./ListOfChildren";
 import Nav from "./Nav";
+import ChildProfile from "./ChildProfile";
 
 const App = () => {
   const { chores } = useUserAuth();
@@ -48,18 +48,18 @@ const App = () => {
             <Route
               exact
               path="/parentdashboard"
-              element={<ParentDashboard key={chores} />}
-            />
-            <Route
-              exact
-              path="/listofchildren"
-              element={<ListOfChildren familyID={familyID} />}
+              element={<ParentDashboard key={chores} familyID={familyID} />}
             />
 
             <Route
               exact
               path="/addchore"
               element={<AddChoreForm familyID={familyID} />}
+            />
+            <Route
+              exact
+              path="/childprofile"
+              element={<ChildProfile userID={userID} familyID={familyID} />}
             />
 
             <Route

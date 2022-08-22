@@ -102,8 +102,8 @@ const AddChoreForm = ({ familyID }) => {
             Save chore
           </button>
         </div>
+        <div>{successMessage && successMessage}</div>
       </form>
-      <div>{successMessage && successMessage}</div>
     </div>
   );
 };

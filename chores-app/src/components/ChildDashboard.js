@@ -30,35 +30,35 @@ const ChildDashboard = ({ userID, familyID }) => {
     setRequestedAmount(event.target.value);
     console.log(requestedAmount);
   };
-  console.log("userID", userID, "chores", chores);
   return (
     <div className="container child-dashboard-container">
       <h1>Dashboard</h1>
-      <h2>
-        Balance £0
-        {
-          // FUTURE DEVELOPMENT: to get this from the DB.
-        }
-      </h2>
+      <div className="child-dashboard-section">
+        <h2>
+          Balance £0
+          {
+            // FUTURE DEVELOPMENT: to get this from the DB.
+          }
+        </h2>
 
-      <form onSubmit={handleRequest}>
-        <label htmlFor="requestedamount">
-          Cash in your hard work - £
-          <input
-            type="number"
-            name="requestedamount"
-            onChange={handleFieldChange}
-          />
-        </label>
-        <button type="submit" className="btn btn-fill_purple">
-          Request Amount
-        </button>
-      </form>
-
-      <div className="container my-chores-container">
-        <h1>My Chores</h1>
+        <form onSubmit={handleRequest}>
+          <label htmlFor="requestedamount">
+            Cash in your hard work - £
+            <input
+              type="number"
+              name="requestedamount"
+              onChange={handleFieldChange}
+            />
+            <button type="submit" className="btn btn-narrow btn-fill_peach">
+              Request Amount
+            </button>
+          </label>
+        </form>
+      </div>
+      <div className="child-dashboard-section">
+        <h2>My Chores</h2>
         <button type="button" className="btn btn-narrow btn-stroke_purple">
-          <a href="/findchore">Find a new chore!</a>
+          <a href="/findchore">+ Find a new chore!</a>
         </button>
         {chores
           // eslint-disable-next-line eqeqeq

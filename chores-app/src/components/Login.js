@@ -16,6 +16,7 @@ const Login = () => {
   };
 
   const [fields, setFields] = useState(initialState.fields);
+  const [error, setError] = useState();
   const handleLogIn = (event) => {
     event.preventDefault();
     logIn(fields.email, fields.password)
@@ -44,8 +45,8 @@ const Login = () => {
           navigate("/childdashboard");
         }
       })
-      .catch((error) => {
-        console.log(error.message);
+      .catch((e) => {
+        setError(e.message);
       });
   };
 
@@ -76,6 +77,7 @@ const Login = () => {
       <button type="submit" className="btn btn-fill_purple">
         Log in
       </button>
+      <span>{error}</span>
     </form>
   );
 };

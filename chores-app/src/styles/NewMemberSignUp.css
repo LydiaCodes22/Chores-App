@@ -1,0 +1,13 @@
+.new-member-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    background: var(--gradient);
+    box-shadow: var(--shadow);
+    padding: 3rem 1rem;
+    border-radius: 20px;
+    width: 90vw;
+    max-width: 1000px;
+    margin: 5rem;
+}
