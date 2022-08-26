@@ -24,7 +24,6 @@ const ParentDashboard = ({ familyID }) => {
     }
   }, []);
   useEffect(() => {
-    // this can be altered to be a link to each child's profile once the child profile component is created
     axios
       .get(
         `http://localhost:3300/family/users/?familyID=${familyID}&role=child`
@@ -63,7 +62,6 @@ const ParentDashboard = ({ familyID }) => {
           <a href="/approvechores">Manage chores pending approval</a>
         </button>
       </div>
-      {/* mapping function to go through the chores list and render them. */}
       {chores.map((chore) => (
         <ChoreCard
           key={chore.choreID}
