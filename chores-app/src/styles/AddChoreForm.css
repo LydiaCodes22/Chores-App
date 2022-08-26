@@ -37,3 +37,8 @@ select {
   flex-direction: row;
   justify-content: space-around;
 }
+
+.add-chore-btn-wrapper .btn {
+  height: 50px;
+  margin-top: 2rem;;
+}

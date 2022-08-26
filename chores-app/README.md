@@ -5,17 +5,19 @@ This is the repository for the front end of the application, the back-end can be
 ## Screenshots
 The welcome page \
 ![screenshot of welcome page](./src/images/screenshots/welcomePage.png "The welcome page") \
-The parents' dashboard \
+The sign up form \
+![screenshot of the sign up form](./src/images/screenshots/SignUpForm.png "The sign up form") \
+The parents' dashboard\
 ![screenshot of the parent dashboard](./src/images/screenshots/parentDashboard.png "The parents' dashboard") \
-The edit chore screen \
+The edit chore screen\
 ![screenshot of the edit chore screen](./src/images/screenshots/editChore.png "The edit chore screen") \
-The approve chore screen \
+The approve chore screen\
 ![screenshot of the approve chore screen](./src/images/screenshots/approveChores.png "The approve chore screen") \
-The childrens' dashboard \
+The childrens' dashboard\
 ![screenshot of the child dashboard](./src/images/screenshots/childDashboard.png "The childrens' dashboard")\
- The screen to invite a new member \
+ The screen to invite a new member\
 ![screenshot of the invite new member screen](./src/images/screenshots/inviteNewMember.png "The screen to invite a new member") \
-The screen showing the children the available chores \
+The screen showing the children the available chores\
 ![screenshot of the screen showing the chores available for children to take](./src/images/screenshots/availableChores.png "The screen showing the children the available chores") 
 
 

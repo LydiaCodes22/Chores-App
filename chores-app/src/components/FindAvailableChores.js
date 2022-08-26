@@ -13,7 +13,6 @@ const FindAvailableChores = ({ familyID, userID }) => {
         .get(`http://localhost:3300/family/${familyID}/chores`)
         .then((response) => {
           setChores(response.data);
-          console.log(chores);
         })
         .catch((e) => {
           console.log(e);

@@ -21,6 +21,14 @@ margin-top: 1rem;
   text-align: center;
 }
 
+.children-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 800px;
+}
+
 .parent-dashboard-container .btn-narrow {
   margin-bottom: 1.5rem;
 }
