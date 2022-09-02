@@ -9,6 +9,8 @@ The sign up form \
 ![screenshot of the sign up form](./src/images/screenshots/SignUpForm.png "The sign up form") \
 The parents' dashboard\
 ![screenshot of the parent dashboard](./src/images/screenshots/parentDashboard.png "The parents' dashboard") \
+The parents' view of their child's profile\
+![The parents' view of their child's profile](./src/images/screenshots/parentViewChildProfile.png "The parents' view of their child's profile") \
 The edit chore screen\
 ![screenshot of the edit chore screen](./src/images/screenshots/editChore.png "The edit chore screen") \
 The approve chore screen\
@@ -24,8 +26,7 @@ The screen showing the children the available chores\
 ## Future Development
 The future of this app would see the API and front-end deployed to make them widely available.\
 Security adjustments would be made; hashing of email addresses, hosting of an email address for the app so as not to rely on outlook, creation of a firebase account with "localhost" unselected.\
-The functionality of the app would be expanded to allow the children's balances to be updated with every approved chore, and to allow the children to submit requests to cash in some of their balance IRL. \
-A component would be added for the parents to give them an overview of each child's profile, which would be linked within 'ListOfChildren.js'.
+The functionality of the app would be expanded to allow the children's balances to be updated with every approved chore, and to allow the children to submit requests to cash in some of their balance IRL. 
 
 ## Technologies
 This project is bootstrapped with React-create-app.\
