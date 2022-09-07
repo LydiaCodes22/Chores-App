@@ -5,24 +5,20 @@ import ChoreCard from "./ChoreCard";
 import { useUserAuth } from "../context/UserAuthContext";
 import "../styles/ChoresToApprove.css";
 
-const ChoresToApprove = ({ familyID }) => {
-  const { chores, setChores } = useUserAuth();
+const ChoresToApprove = () => {
+  const { chores, setChores, familyID } = useUserAuth();
   useEffect(() => {
     if (familyID) {
-      console.log({ familyID });
       axios
         .get(`http://localhost:3300/family/${familyID}/chores`)
         .then((response) => {
           setChores(response.data);
-          console.log(chores);
         })
         .catch((e) => {
           console.log(e);
         });
-    } else {
-      console.log("no family ID");
     }
-  }, []);
+  }, [familyID]);
   return (
     <div className="container approve-chores-container">
       <h2>These are the completed chores for you to approve</h2>

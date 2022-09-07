@@ -7,16 +7,8 @@ import axios from "axios";
 
 import { useUserAuth } from "../context/UserAuthContext";
 
-const EditChore = ({
-  setEditing,
-  name,
-  price,
-  status,
-  choreID,
-  owner,
-  familyID,
-}) => {
-  const { setChores } = useUserAuth();
+const EditChore = ({ setEditing, name, price, status, choreID, owner }) => {
+  const { setChores, familyID } = useUserAuth();
   const initialState = {
     fields: {
       name,
@@ -33,7 +25,6 @@ const EditChore = ({
   const handleStatusSelect = (event) => {
     event.preventDefault();
     setFields({ ...fields, status: event.target.value, owner: null });
-    console.log(fields);
   };
   const cancelEdit = (event) => {
     event.preventDefault();

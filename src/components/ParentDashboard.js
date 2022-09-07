@@ -6,8 +6,8 @@ import "../styles/ParentDashboard.css";
 import { useUserAuth } from "../context/UserAuthContext";
 
 // eslint-disable-next-line react/prop-types
-const ParentDashboard = ({ familyID }) => {
-  const { chores, setChores } = useUserAuth();
+const ParentDashboard = () => {
+  const { chores, setChores, familyID } = useUserAuth();
   const [myChildren, setMyChildren] = useState([]);
   useEffect(() => {
     if (familyID) {
@@ -15,26 +15,18 @@ const ParentDashboard = ({ familyID }) => {
         .get(`http://localhost:3300/family/${familyID}/chores`)
         .then((response) => {
           setChores(response.data);
+          return axios.get(
+            `http://localhost:3300/family/users/?familyID=${familyID}&role=child`
+          );
+        })
+        .then((response) => {
+          setMyChildren(response.data);
         })
         .catch((e) => {
           console.log(e);
         });
-    } else {
-      console.log("no family ID");
     }
-  }, []);
-  useEffect(() => {
-    axios
-      .get(
-        `http://localhost:3300/family/users/?familyID=${familyID}&role=child`
-      )
-      .then((response) => {
-        setMyChildren(response.data);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }, []);
+  }, [familyID]);
   return (
     <div className="container parent-dashboard-container">
       <h1>Dashboard</h1>

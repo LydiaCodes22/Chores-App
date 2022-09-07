@@ -6,9 +6,9 @@ import logo from "../images/dosh-logo.png";
 import { useUserAuth } from "../context/UserAuthContext";
 import LogOut from "./LogOut";
 
-const Nav = ({ userRole }) => {
+const Nav = () => {
   const navigate = useNavigate();
-  const { user } = useUserAuth();
+  const { user, userRole } = useUserAuth();
 
   const navigateHome = (event) => {
     event.preventDefault();

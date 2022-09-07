@@ -3,20 +3,23 @@
 import React, { useState } from "react";
 import "../styles/AddChoreForm.css";
 import axios from "axios";
+import { useUserAuth } from "../context/UserAuthContext";
 
-const AddChoreForm = ({ familyID }) => {
+const AddChoreForm = () => {
+  const { familyID } = useUserAuth();
   const initialState = {
     fields: {
       name: "",
       price: "",
       status: "U",
-      familyID,
+      familyID: "",
     },
   };
   const [fields, setFields] = useState(initialState.fields);
+
   const handleFieldChange = (event) => {
     event.preventDefault();
-    setFields({ ...fields, [event.target.name]: event.target.value });
+    setFields({ ...fields, [event.target.name]: event.target.value, familyID });
   };
   const handleStatusSelect = (event) => {
     event.preventDefault();
