@@ -4,8 +4,10 @@ import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import axios from "axios";
 import "../styles/AddNewMemberForm.css";
+import { useUserAuth } from "../context/UserAuthContext";
 
-const AddNewMemberForm = ({ familyID }) => {
+const AddNewMemberForm = () => {
+  const { familyID } = useUserAuth();
   const initialState = {
     fields: {
       email: "",

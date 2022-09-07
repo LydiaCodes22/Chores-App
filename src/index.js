@@ -6,9 +6,9 @@ import { UserAuthContextProvider } from "./context/UserAuthContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <UserAuthContextProvider>
+  <UserAuthContextProvider>
+    <React.StrictMode>
       <App />
-    </UserAuthContextProvider>
-  </React.StrictMode>
+    </React.StrictMode>
+  </UserAuthContextProvider>
 );

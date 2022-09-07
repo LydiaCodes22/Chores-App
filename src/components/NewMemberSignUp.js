@@ -27,12 +27,8 @@ const NewMemberSignUp = () => {
   const registration = (event) => {
     event.preventDefault();
     if (fields.password === fields.confirmPassword) {
-      signUp(fields.email, fields.password)
-        .then(() => {
-          return axios.get(
-            `http://localhost:3300/family/users/?email=${email}`
-          );
-        })
+      axios
+        .get(`http://localhost:3300/family/users/?email=${email}`)
         .then((response) => {
           const [{ userID, role, familyID }] = response.data;
           localStorage.setItem("userID", JSON.stringify(userID));
@@ -48,6 +44,7 @@ const NewMemberSignUp = () => {
           }
         })
         .then(() => {
+          signUp(fields.email, fields.password);
           const userRole = localStorage.getItem("userRole");
           if (userRole === '"parent"') {
             navigate("/parentdashboard");

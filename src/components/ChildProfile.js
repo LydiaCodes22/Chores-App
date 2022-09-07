@@ -6,10 +6,10 @@ import ChoreCard from "./ChoreCard";
 import "../styles/ChildProfile.css";
 import { useUserAuth } from "../context/UserAuthContext";
 
-const ChildProfile = ({ userID, familyID }) => {
+const ChildProfile = () => {
   const [childDetails, setChildDetails] = useState({ name: "" });
   const [searchParams] = useSearchParams();
-  const { chores, setChores } = useUserAuth();
+  const { chores, setChores, userID, familyID } = useUserAuth();
   const email = searchParams.get("email");
   useEffect(() => {
     if (familyID) {
@@ -21,10 +21,8 @@ const ChildProfile = ({ userID, familyID }) => {
         .catch((e) => {
           console.log(e);
         });
-    } else {
-      console.log("no family ID");
     }
-  }, []);
+  }, [familyID]);
   useEffect(() => {
     if (userID) {
       axios
@@ -35,10 +33,8 @@ const ChildProfile = ({ userID, familyID }) => {
         .catch((e) => {
           console.log(e);
         });
-    } else {
-      console.log("no user ID");
     }
-  }, []);
+  }, [userID]);
   return (
     <div className="child-profile-container">
       <h1>{`${childDetails.name}'s Account`}</h1>

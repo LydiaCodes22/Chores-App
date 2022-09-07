@@ -19,27 +19,22 @@ const Login = () => {
   const [error, setError] = useState();
   const handleLogIn = (event) => {
     event.preventDefault();
-    logIn(fields.email, fields.password)
-      .then(() => {
-        return axios.get(
-          `http://localhost:3300/family/users/?email=${fields.email}`
-        );
-      })
+    // logIn(fields.email, fields.password)
+    // .then(() => {
+    //   return
+    axios
+      .get(`http://localhost:3300/family/users/?email=${fields.email}`)
+      // })
       .then((response) => {
         const [{ userID, role, familyID }] = response.data;
         localStorage.setItem("userID", JSON.stringify(userID));
         localStorage.setItem("userRole", JSON.stringify(role));
         localStorage.setItem("familyID", JSON.stringify(familyID));
-        const storedfamilyID = localStorage.getItem("familyID");
-        const storeduserID = localStorage.getItem("userID");
-        const storeduserRole = localStorage.getItem("userRole");
-        console.log(
-          "local storage to confirm login stored data:",
-          { storedfamilyID },
-          { storeduserID },
-          { storeduserRole }
-        );
-        if (role === "parent") {
+        return logIn(fields.email, fields.password);
+      })
+      .then(() => {
+        const storedUserRole = localStorage.getItem("userRole");
+        if (storedUserRole === '"parent"') {
           navigate("/parentdashboard");
         } else {
           navigate("/childdashboard");

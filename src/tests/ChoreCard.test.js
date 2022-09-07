@@ -9,7 +9,7 @@ const validProps = {
   emptyFunction: () => {},
 };
 
-describe("the chore card component", () => {
+xdescribe("the chore card component", () => {
   it("matches the screenshot", () => {
     const { asFragment } = render(
       <ChoreCard

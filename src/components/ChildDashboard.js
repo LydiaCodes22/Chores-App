@@ -5,8 +5,8 @@ import ChoreCard from "./ChoreCard";
 import { useUserAuth } from "../context/UserAuthContext";
 import "../styles/ChildDashboard.css";
 
-const ChildDashboard = ({ userID, familyID }) => {
-  const { chores, setChores } = useUserAuth();
+const ChildDashboard = () => {
+  const { chores, setChores, userID, familyID } = useUserAuth();
   useEffect(() => {
     if (familyID) {
       axios
@@ -17,10 +17,8 @@ const ChildDashboard = ({ userID, familyID }) => {
         .catch((e) => {
           console.log(e);
         });
-    } else {
-      console.log("no family ID");
     }
-  }, []);
+  }, [familyID]);
   const [requestedAmount, setRequestedAmount] = useState();
   const handleRequest = () => {
     // handle request function should POST the requested amount to the DB and reset the input field so it is blank again.
@@ -65,8 +63,6 @@ const ChildDashboard = ({ userID, familyID }) => {
           .filter((chore) => chore.owner == userID && chore.status == "T")
           .map((chore) => (
             <ChoreCard
-              familyID={familyID}
-              userID={userID}
               key={chore.choreID}
               name={chore.name}
               price={chore.price}

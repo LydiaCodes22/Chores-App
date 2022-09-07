@@ -5,8 +5,8 @@ import ChoreCard from "./ChoreCard";
 import { useUserAuth } from "../context/UserAuthContext";
 import "../styles/FindAvailableChores.css";
 
-const FindAvailableChores = ({ familyID, userID }) => {
-  const { chores, setChores } = useUserAuth();
+const FindAvailableChores = () => {
+  const { chores, setChores, familyID } = useUserAuth();
   useEffect(() => {
     if (familyID) {
       axios
@@ -17,10 +17,8 @@ const FindAvailableChores = ({ familyID, userID }) => {
         .catch((e) => {
           console.log(e);
         });
-    } else {
-      console.log("no family ID");
     }
-  }, []);
+  }, [familyID]);
   return (
     <div className="container find-chore-container">
       <h1>These chores are available!</h1>
@@ -28,12 +26,11 @@ const FindAvailableChores = ({ familyID, userID }) => {
         .filter((chore) => chore.status === "A")
         .map((chore) => (
           <ChoreCard
-            key={chore._id}
+            key={chore.choreID}
             name={chore.name}
             price={chore.price}
             choreOwner={chore.owner}
             choreID={chore.choreID}
-            userID={userID}
             component="FindAvailableChores"
           />
         ))}

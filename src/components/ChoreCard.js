@@ -9,18 +9,9 @@ import "../styles/ChoreCard.css";
 
 import { useUserAuth } from "../context/UserAuthContext";
 
-const ChoreCard = ({
-  name,
-  price,
-  status,
-  component,
-  choreID,
-  choreOwner,
-  familyID,
-  userID,
-}) => {
+const ChoreCard = ({ name, price, status, component, choreID, choreOwner }) => {
   const [editing, setEditing] = useState(false);
-  const { chores, setChores } = useUserAuth();
+  const { chores, setChores, familyID, userID } = useUserAuth();
 
   const editButton = (event) => {
     event.preventDefault();

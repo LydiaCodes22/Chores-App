@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the parents dashboard matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="container child-dashboard-container"
+  >
+    <h1>
+      Dashboard
+    </h1>
+    <div
+      class="child-dashboard-section"
+    >
+      <h2>
+        Balance £0
+      </h2>
+      <form>
+        <label
+          for="requestedamount"
+        >
+          Cash in your hard work - £
+          <input
+            name="requestedamount"
+            type="number"
+          />
+          <button
+            class="btn btn-narrow btn-fill_peach"
+            type="submit"
+          >
+            Request Amount
+          </button>
+        </label>
+      </form>
+    </div>
+    <div
+      class="child-dashboard-section"
+    >
+      <h2>
+        My Chores
+      </h2>
+      <button
+        class="btn btn-narrow btn-stroke_purple"
+        type="button"
+      >
+        <a
+          href="/findchore"
+        >
+          + Find a new chore!
+        </a>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

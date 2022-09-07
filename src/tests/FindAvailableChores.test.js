@@ -8,7 +8,7 @@ const validChores = [
   { _id: 12345, name: "unavailableChore", price: "1", status: "U" },
 ];
 
-describe("the parents dashboard", () => {
+xdescribe("the parents dashboard", () => {
   it("matches the snapshot", () => {
     const { asFragment } = render(<FindAvailableChores chores={validChores} />);
 
