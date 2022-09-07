@@ -10,7 +10,7 @@ const validProps = {
   choreID: 123,
 };
 
-describe("the edit chore component", () => {
+xdescribe("the edit chore component", () => {
   it("matches the screenshot", () => {
     const { asFragment } = render(
       <EditChore

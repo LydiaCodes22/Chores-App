@@ -9,7 +9,7 @@ const validChores = [
   { _id: 123456, name: "pendingApprovalChore", price: "1", status: "P" },
 ];
 
-describe("the parents dashboard", () => {
+xdescribe("the parents dashboard", () => {
   it("matches the snapshot", () => {
     const { asFragment } = render(<ChoresToApprove chores={validChores} />);
 
